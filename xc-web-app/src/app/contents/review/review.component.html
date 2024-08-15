@@ -1,0 +1,65 @@
+<div class="navbar">
+    <button class="nav-item">Home</button>
+    <button class="nav-item">Projects</button>
+    <button class="nav-item">Collabs</button>
+    <button class="nav-item active">Review</button>
+    <button class="nav-item">Account</button>
+    <button class="nav-item">Logout</button>
+</div>
+
+<div class="content">
+    <div class="form-section">
+        <h2>Upload to Project</h2>
+        <form [formGroup]="uploadForm" (ngSubmit)="onSubmitUpload()">
+            <select formControlName="selectedProject">
+                <option>Select Project</option>
+                <!-- Add project options here -->
+            </select>
+            <input type="file" formControlName="file" placeholder="Browse Files">
+            <button type="submit" [disabled]="!uploadForm.valid">Upload</button>
+        </form>
+
+        <h2>Commit Project</h2>
+        <form [formGroup]="commitForm" (ngSubmit)="onSubmitCommit()">
+            <select formControlName="commitProject">
+                <option>Project 1</option>
+                <!-- Add project options here -->
+            </select>
+            <button type="submit" [disabled]="!commitForm.valid">Commit</button>
+        </form>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="collaboration-section">
+        <h2>Review Collaboration</h2>
+        <select formControlName="reviewProject">
+            <option>Project 1</option>
+            <!-- Add project options here -->
+        </select>
+
+        <div class="review-list">
+            <div class="review-item">
+                <span class="project-icon">▶</span>
+                <span class="member-name">Project 1</span>
+                <div class="status-bars">
+                    <div class="status-bar status-uploaded"></div>
+                    <span class="status-icon">⬆️</span>
+                    <button class="status-button">Proceed to Commit</button>
+                </div>
+                <button class="review-btn">CLICK HERE</button>
+            </div>
+            <div class="review-item">
+                <span class="project-icon">▶</span>
+                <span class="member-name">Member 1</span>
+                <div class="status-bars">
+                    <div class="status-bar status-uploaded"></div>
+                    <span class="status-icon">⬆️</span>
+                    <button class="status-button">Proceed to Review</button>
+                </div>
+                <button class="review-btn">CLICK HERE</button>
+            </div>
+            <!-- Add more review items here -->
+        </div>
+    </div>
+</div>

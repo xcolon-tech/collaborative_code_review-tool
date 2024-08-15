@@ -1,0 +1,79 @@
+<div class="navbar">
+    <button class="nav-item">Home</button>
+    <button class="nav-item">Projects</button>
+    <button class="nav-item active">Collabs</button>
+    <button class="nav-item">Review</button>
+    <button class="nav-item">Account</button>
+    <button class="nav-item">Logout</button>
+</div>
+
+<div class="content">
+    <div class="form-section">
+        <h2>Add to Collaboration</h2>
+        <form [formGroup]="collabForm" (ngSubmit)="onSubmitCollab()">
+            <select formControlName="project" placeholder="Select Project">
+                <option>Select Project</option>
+                <!-- Add project options here -->
+            </select>
+            <select formControlName="member1" placeholder="Select Member">
+                <option>Select Member</option>
+                <!-- Add member options here -->
+            </select>
+            <select formControlName="member2" placeholder="Select Member">
+                <option>Select Member</option>
+                <!-- Add member options here -->
+            </select>
+            <button type="button" class="add-more">Add More <img src="assets/add-icon.png" alt="Add"></button>
+            <button type="submit" [disabled]="!collabForm.valid">Submit</button>
+        </form>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="collaboration-section">
+        <h2>Collaboration</h2>
+        <select formControlName="selectedProject">
+            <option>Project 1</option>
+            <!-- Add project options here -->
+        </select>
+
+        <div class="collaboration-list">
+            <div class="collaboration-item">
+                <span class="project-icon">▶</span>
+                <span class="member-name">Project 1</span>
+                <div class="status-bars">
+                    <div class="status-bar status-uploaded"></div>
+                    <div class="status-bar status-committed"></div>
+                    <div class="status-bar status-reviewed"></div>
+                </div>
+                <button class="remove-btn">✖</button>
+            </div>
+            <div class="collaboration-item">
+                <span class="project-icon">▶</span>
+                <span class="member-name">Member 1</span>
+                <div class="status-bars">
+                    <div class="status-bar status-uploaded"></div>
+                    <div class="status-bar status-committed"></div>
+                    <div class="status-bar status-reviewed"></div>
+                </div>
+                <button class="remove-btn">✖</button>
+            </div>
+            <!-- Add more collaboration items here -->
+        </div>
+    </div>
+</div>
+
+<div class="legend">
+    <div class="legend-item">
+        <div class="legend-color" style="background-color: red;"></div>
+        <span>Uploaded</span>
+    </div>
+    <div class="legend-item">
+        <div class="legend-color" style="background-color: orange;"></div>
+        <span>Committed</span>
+    </div>
+    <div class="legend-item">
+        <div class="legend-color" style="background-color: green;"></div>
+        <span>Reviewed</span>
+    </div>
+</div>

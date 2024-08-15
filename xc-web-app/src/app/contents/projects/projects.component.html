@@ -1,0 +1,44 @@
+<div class="navbar">
+    <button class="nav-item">Home</button>
+    <button class="nav-item active">Projects</button>
+    <button class="nav-item">Collabs</button>
+    <button class="nav-item">Review</button>
+    <button class="nav-item">Account</button>
+    <button class="nav-item">Logout</button>
+</div>
+
+<div class="content">
+    <div class="form-section">
+        <h2>Add/Update Project</h2>
+        <form [formGroup]="projectForm" (ngSubmit)="onSubmitProject()">
+            <input type="text" formControlName="projectName" placeholder="Project Name">
+            <input type="text" formControlName="description" placeholder="Description">
+            <input type="text" formControlName="tag" placeholder="Tag (Referral ID of the project)">
+            <button type="submit" [disabled]="!projectForm.valid">Submit</button>
+        </form>
+
+        <h2>Delete Project</h2>
+        <form [formGroup]="deleteProjectForm" (ngSubmit)="onDeleteProject()">
+            <input type="text" formControlName="projectTag" placeholder="Project Tag">
+            <button type="submit" [disabled]="!deleteProjectForm.valid">Submit</button>
+        </form>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="form-section">
+        <h2>Add/Update Member</h2>
+        <form [formGroup]="memberForm" (ngSubmit)="onSubmitMember()">
+            <input type="text" formControlName="name" placeholder="Name">
+            <input type="email" formControlName="email" placeholder="Email ID">
+            <input type="password" formControlName="password" placeholder="Password">
+            <button type="submit" [disabled]="!memberForm.valid">Submit</button>
+        </form>
+
+        <h2>Delete Member</h2>
+        <form [formGroup]="deleteMemberForm" (ngSubmit)="onDeleteMember()">
+            <input type="email" formControlName="memberEmail" placeholder="Member Email ID">
+            <button type="submit" [disabled]="!deleteMemberForm.valid">Submit</button>
+        </form>
+    </div>
+</div>
