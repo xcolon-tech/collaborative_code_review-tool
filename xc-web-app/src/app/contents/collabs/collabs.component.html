@@ -1,10 +1,10 @@
 <div class="navbar">
-    <button class="nav-item">Home</button>
-    <button class="nav-item">Projects</button>
-    <button class="nav-item active">Collabs</button>
-    <button class="nav-item">Review</button>
-    <button class="nav-item">Account</button>
-    <button class="nav-item">Logout</button>
+    <button class="nav-item" routerLink="/app/app">Home</button>
+    <button class="nav-item" routerLink="/app/project">Projects</button>
+    <button class="nav-item active" routerLink="/app/collab">Collabs</button>
+    <button class="nav-item" routerLink="/app/review">Review</button>
+    <button class="nav-item" routerLink="/app/account">Account</button>
+    <!-- <button class="nav-item">Logout</button> -->
 </div>
 
 <div class="content">
@@ -23,8 +23,8 @@
                 <option>Select Member</option>
                 <!-- Add member options here -->
             </select>
-            <button type="button" class="add-more">Add More <img src="assets/add-icon.png" alt="Add"></button>
-            <button type="submit" [disabled]="!collabForm.valid">Submit</button>
+            <button type="button" class="add-more">Add More</button>
+            <button type="submit">Submit</button>
         </form>
     </div>
 

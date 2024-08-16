@@ -1,10 +1,10 @@
 <div class="navbar">
-    <button class="nav-item">Home</button>
-    <button class="nav-item">Projects</button>
-    <button class="nav-item">Collabs</button>
-    <button class="nav-item">Review</button>
-    <button class="nav-item active">Account</button>
-    <button class="nav-item">Logout</button>
+    <button class="nav-item" routerLink="/app">Home</button>
+    <button class="nav-item" routerLink="/app/project">Projects</button>
+    <button class="nav-item" routerLink="/app/collab">Collabs</button>
+    <button class="nav-item" routerLink="/app/review">Review</button>
+    <button class="nav-item active" routerLink="/app/account">Account</button>
+    <!-- <button class="nav-item">Logout</button> -->
 </div>
 
 <div class="content">
@@ -13,19 +13,19 @@
         <form [formGroup]="profileForm" (ngSubmit)="onSubmitProfile()">
             <div class="input-group">
                 <input type="text" formControlName="name" placeholder="Name">
-                <img src="assets/edit-icon.png" alt="Edit">
+                <!-- <img src="assets/edit-icon.png" alt="Edit"> -->
             </div>
             <div class="input-group">
                 <input type="email" formControlName="email" placeholder="Email ID">
-                <img src="assets/edit-icon.png" alt="Edit">
+                <!-- <img src="assets/edit-icon.png" alt="Edit"> -->
             </div>
             <div class="input-group">
                 <input type="password" formControlName="password" placeholder="New Password">
-                <img src="assets/edit-icon.png" alt="Edit">
+                <!-- <img src="assets/edit-icon.png" alt="Edit"> -->
             </div>
             <div class="input-group">
                 <input type="password" formControlName="confirmPassword" placeholder="Confirm Password">
-                <img src="assets/edit-icon.png" alt="Edit">
+                <!-- <img src="assets/edit-icon.png" alt="Edit"> -->
             </div>
         </form>
     </div>
@@ -50,7 +50,7 @@
                     <input type="checkbox" formControlName="review"> Allow anyone to review my committed code
                 </label>
             </div>
-            <button type="submit" class="delete-account-btn">Delete My Account</button>
+            <button type="submit" class="delete-account-btn">Save Changes</button>
         </form>
     </div>
 </div>

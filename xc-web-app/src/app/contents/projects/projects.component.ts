@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule, ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ProjectService } from './project.service';
+import { RouterLink, RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule],
+  imports: [FormsModule, ReactiveFormsModule, RouterLink, RouterOutlet],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.css'
 })

@@ -1,10 +1,10 @@
 <div class="navbar">
-    <button class="nav-item">Home</button>
-    <button class="nav-item">Projects</button>
-    <button class="nav-item">Collabs</button>
-    <button class="nav-item active">Review</button>
-    <button class="nav-item">Account</button>
-    <button class="nav-item">Logout</button>
+    <button class="nav-item" routerLink="/app/app">Home</button>
+    <button class="nav-item" routerLink="/app/project">Projects</button>
+    <button class="nav-item" routerLink="/app/collab">Collabs</button>
+    <button class="nav-item active" routerLink="/app/review">Review</button>
+    <button class="nav-item" routerLink="/app/account">Account</button>
+    <!-- <button class="nav-item">Logout</button> -->
 </div>
 
 <div class="content">
@@ -16,7 +16,7 @@
                 <!-- Add project options here -->
             </select>
             <input type="file" formControlName="file" placeholder="Browse Files">
-            <button type="submit" [disabled]="!uploadForm.valid">Upload</button>
+            <button type="submit">Upload</button>
         </form>
 
         <h2>Commit Project</h2>
@@ -25,7 +25,7 @@
                 <option>Project 1</option>
                 <!-- Add project options here -->
             </select>
-            <button type="submit" [disabled]="!commitForm.valid">Commit</button>
+            <button type="submit">Commit</button>
         </form>
     </div>
 
